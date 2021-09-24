@@ -795,7 +795,7 @@ def nextPage(event):
 
 
 
-window = Toplevel()
+window = Tk()
 fontHead = Font(family="Helvetica", size=20)
 
 fontSmall = Font(family="Helvetica", size=15)
@@ -803,10 +803,10 @@ image = Image.open("pic1.jpg")
 window.geometry("1250x656")
 window.resizable(width=False, height=False)
 
-bgimage = ImageTk.PhotoImage(image)
+bgimage = ImageTk.PhotoImage(image, master=window)
 
 bglabel = Label(window, image=bgimage)
-
+bglabel.image = bgimage
 bglabel.place(x=0, y=0)
 
 label1 = Label(window, text="Process Scheduling", font=fontHead)
